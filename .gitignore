@@ -1,0 +1,18 @@
+# Project dependencies
+vendor/
+
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Debug information
+debug
+
+# Test binary, build with `go test -c`
+*.test
+
+# VS Code configuration
+.vscode/
