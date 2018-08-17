@@ -5,6 +5,14 @@ import (
 	"strconv"
 )
 
+type ConsoleHandle int
+
+const (
+	Stdin  ConsoleHandle = -10
+	Stdout ConsoleHandle = -11
+	Stderr ConsoleHandle = -12
+)
+
 const (
 	ESC = "\u001B["
 	OSC = "\u001B]"
