@@ -79,7 +79,7 @@ func CursorMove(x, y int) string {
 	return s
 }
 
-func Scoll(n int) string {
+func Scroll(n int) string {
 	if n > 0 {
 		return ESC + strconv.Itoa(n) + "S"
 	} else if n < 0 {
