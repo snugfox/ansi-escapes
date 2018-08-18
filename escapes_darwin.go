@@ -7,8 +7,12 @@ var (
 )
 
 func init() {
+	// Apple's terminal uses 7 and 8 rather than s and u
 	if os.Getenv("TERM_PROGRAM") == "Apple_Terminal" {
-		CursorSavePosition = ESC + "7"
-		CursorRestorePosition = ESC + "8"
+		CursorSavePosition = Esc + "7"
+		CursorRestorePosition = Esc + "8"
+	} else {
+		CursorSavePosition = Esc + "s"
+		CursorRestorePosition = Esc + "u"
 	}
 }

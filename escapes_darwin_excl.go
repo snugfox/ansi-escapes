@@ -2,7 +2,8 @@
 
 package escapes
 
+// ANSI escape sequences for saving and restoring the cursor position
 const (
-	CursorSavePosition    = ESC + "s"
-	CursorRestorePosition = ESC + "u"
+	CursorSavePosition    = Esc + "s"
+	CursorRestorePosition = Esc + "u"
 )
