@@ -3,7 +3,8 @@ package escapes
 import "os"
 
 var (
-	CursorSavePosition, CursorRestorePosition string
+	CursorSavePosition    string
+	CursorRestorePosition string
 )
 
 func init() {
