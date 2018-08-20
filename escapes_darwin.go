@@ -2,6 +2,7 @@ package escapes
 
 import "os"
 
+// ANSI escape sequences for saving and restoring the cursor position
 var (
 	CursorSavePosition    string
 	CursorRestorePosition string
