@@ -5,15 +5,11 @@ import (
 	"strconv"
 )
 
-// ConsoleHandle is an integer representing a console handle on Windows.
-type ConsoleHandle int
-
-// Standard console handles on Windows
-const (
-	Stdin  ConsoleHandle = -10
-	Stdout ConsoleHandle = -11
-	Stderr ConsoleHandle = -12
-)
+// ConsoleDim represents the dimensions of a console in rows and columns.
+type ConsoleDim struct {
+	Rows int
+	Cols int
+}
 
 // Common fragments of escape sequences
 const (
