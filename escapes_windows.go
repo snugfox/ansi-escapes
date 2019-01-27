@@ -38,11 +38,18 @@ func DisableVirtualTerminal(fd uintptr) error {
 		return err
 	}
 	return nil
+}
+
+// GetConsoleSize gets the dimensions of the console.
+func GetConsoleSize(fd uintptr) (*ConsoleDim, error) {
+	var info windows.ConsoleScreenBufferInfo
+	if err := windows.GetConsoleScreenBufferInfo(windows.Handle(fd), &info); err != nil {
+		return nil, err
 	}
 
-	if err = setConsoleMode(handle, mode); err != nil {
-		return errors.New("Failed to set console mode: " + err.Error())
-	}
-
-	return nil
+	// Return only the console dimensions
+	return &ConsoleDim{
+		Rows: int(info.Window.Bottom - info.Window.Top),
+		Cols: int(info.Window.Right - info.Window.Left),
+	}, nil
 }
