@@ -41,8 +41,8 @@ func main() {
   // Enable support on Windows for this application. It is safe to include on
   // OSes other than Windows, as the functions will only return nil; thus
   // compiled out.
-  escapes.EnableVirtualTerminal(escapes.Stdout)
-  defer escapes.DisableVirtualTerminal(escapes.Stdout)
+  escapes.EnableVirtualTerminal(os.Stdout.Fd())
+  defer escapes.DisableVirtualTerminal(os.Stdout.Fd())
 
   // Erase the screen. Remember that fmt.Println would print the newline *after*
   // the escape sequence.
